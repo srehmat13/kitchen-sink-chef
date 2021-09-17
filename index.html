@@ -7,18 +7,15 @@
     <title>Kitchen Sink Chef</title>
     <!--link for whatever style format we use goes here-->
     <link href="" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <!--Style
     <style>
         * {
         border: 1px solid black;
-
-
-
         }
     </style>-->
-
 </head>
 <body>
     <!--navigation-->
@@ -26,17 +23,16 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#Subscribe">Subscribe</a>
-                </li>
-                <li>
                     <a href="#Recipes">Recipes</a>
                 </li>
                 <li>
                     <a href="#Favorites">Favorites</a>
                 </li>
+                <li>
+                    <a href="#Subscribe" class="waves-effect waves-light btn">Subscribe</a>
+                </li>
             </ul>
         </nav>
-
         <div class="header">
             <h1>
                 <a href="/">Kitchen Sink Chef   <i class="fas fa-utensils"></i></a>
@@ -46,21 +42,15 @@
             </h2>
         </div>
     </header>
-
         <main>
             <div id="search-container">
-            <form>
-                <input type="text" id="recipes" name="recipe-choice" value="" placeholder="Search for Recipes"> 
-                    <button class="submit-btn" onclick="recipeFunction()"><i class="fas fa-search"></i></button>
-            </form>  
+                <input type="text" id="ingredients" name="recipe-choice" placeholder="Search for Recipes"> 
+                <button id="search-button" class="submit-btn"><i class="fas fa-search"></i></button>
             </div>
-
             <div id="recipe-content">
-
             </div>
-
-
         </main>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
