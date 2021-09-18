@@ -43,12 +43,45 @@
         </div>
     </header>
         <main>
-            <div id="search-container">
-                <input type="text" id="ingredients" name="recipe-choice" placeholder="Search for Recipes"> 
-                <button id="search-button" class="submit-btn"><i class="fas fa-search"></i></button>
-            </div>
-            <div id="recipe-content">
-            </div>
+            <section>
+                <div class="search-container">
+                    <input type="text" id="ingredients" name="recipe-choice" placeholder="Search for Recipes"> 
+                    <button id="search-button" class="submit-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-container">  
+                        <div class="input-field">
+                            <select name="cuisine-type" class="select-dropdown">                    
+                                <option value="" disabled selected>Choose a Cuisine Type</option>                    
+                                <option value="american">American</option>                    
+                                <option value="asian">Asian</option>                    
+                                <option value="british">British</option>                    
+                                <option value="caribbean">Caribbean</option>     
+                                <option value="centraleurope">Central Europe</option> 
+                                <option value="chinese">Chinese</option>     
+                                <option value="easterneurope">Eastern Europe</option>
+                                <option value="french">French</option>  
+                                <option value="indian">Indian</option> 
+                                <option value="italian">Italian</option>
+                                <option value="japanese">Japanese</option> 
+                                <option value="kosher">Kosher</option>
+                                <option value="mediterranean">Mediterranean</option> 
+                                <option value="mexican">Mexican</option>  
+                                <option value="middleeastern">Middle Eastern</option> 
+                                <option value="nordic">Nordic</option>
+                                <option value="southamerican">South American</option>  
+                                <option value="southeastasian">South East Asian</option>        
+                            </select> 
+                        </div>                    
+                        <button id="save-task" class="btn" type="submit">Choose a Cuisine Type</button>         
+                     
+
+                </div>
+            </section>
+            <section>
+                <div id="recipe-content">
+
+                </div>
+            </section>
         </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>

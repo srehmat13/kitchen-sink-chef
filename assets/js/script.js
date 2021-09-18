@@ -1,3 +1,6 @@
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
 
 $('#search-button').on('click', function() {
     // gets user ingredients from search bar 
