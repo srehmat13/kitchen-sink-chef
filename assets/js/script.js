@@ -1,4 +1,6 @@
 var sKEY = 'dbefcc9a25f8481a9786d8ffcf0b2c2e';
+var eKEY = 'f4d6c76fe323190b120931cc39642aad';
+var eID = 'c8eab63d';
 var recipeContent = $("#recipe-content");
 
 // display recipe on screen 
@@ -41,7 +43,6 @@ $('#search-button').on('click', function() {
     fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${finished}&number=100&apiKey=${sKEY}`).then(function(response){
         return response.json();
     }).then(function(data) {
-      console.log(data);
       // get random number to get random element in data array 
       var randomNum = Math.floor(Math.random() * data.length);
       var food = data[randomNum];
@@ -65,4 +66,14 @@ $('#search-button').on('click', function() {
       getRecipe(title, image, mainIngredients, otherIngredients);
 
     })
+});
+
+$("#search-cuisine").on('click', function () {
+  var type = $("#cuisine").val();
+  
+  fetch(`https://api.edamam.com/api/recipes/v2?type=public&cuisineType=${type}&app_id=${eID}&app_key=${eKEY}`).then(function(response) {
+    return response.json();
+  }).then(function(data) {
+    console.log(data);
+  });
 });
