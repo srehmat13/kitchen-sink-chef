@@ -10,12 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <!--Style
-    <style>
-        * {
-        border: 1px solid black;
-        }
-    </style>-->
 </head>
 <body>
     <!--navigation-->
@@ -35,7 +29,7 @@
         </nav>
         <div class="header">
             <h1> 
-                <a href="/">Kitchen Sink Chef   <i class="fas fa-utensils"></i></a>
+                <a href="/">Kitchen Sink Chef <i class="fas fa-utensils"></i></a>
             </h1>
             <h2>
                 Don't have time for grocieries, try these recipes!
@@ -50,7 +44,7 @@
                 </div>
                 <div class="search-container">  
                         <div class="input-field">
-                            <select name="cuisine-type" class="select-dropdown">                    
+                            <select id="cuisine" name="cuisine-type" class="select-dropdown">                    
                                 <option value="" disabled selected>Choose a Cuisine Type</option>                    
                                 <option value="american">American</option>                    
                                 <option value="asian">Asian</option>                    
@@ -72,7 +66,7 @@
                                 <option value="southeastasian">South East Asian</option>        
                             </select> 
                         </div>                    
-                        <button id="save-task" class="btn" type="submit">Choose a Cuisine Type</button>         
+                        <button id="search-cuisine" class="btn" type="submit">Choose a Cuisine Type</button>         
                      
 
                 </div>
