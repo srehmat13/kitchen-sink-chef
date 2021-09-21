@@ -71,7 +71,7 @@ $('#search-button').on('click', function() {
 $("#search-cuisine").on('click', function () {
   var type = $("#cuisine").val();
   
-  fetch(`https://api.edamam.com/api/recipes/v2?type=public&cuisineType=${type}&app_id=${eID}&app_key=${eKEY}`).then(function(response) {
+  fetch(`https://api.edamam.com/api/recipes/v2?type=public&random=true&cuisineType=${type}&app_id=${eID}&app_key=${eKEY}`).then(function(response) {
     return response.json();
   }).then(function(data) {
     console.log(data);
