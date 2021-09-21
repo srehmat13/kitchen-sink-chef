@@ -5,15 +5,20 @@ var recipeContent = $("#recipe-content");
 
 // display recipe on screen 
 // missing instructions
-var getRecipe = function(title, image, main, other) {
+var getRecipeByIngredients = function(title, image, main, other) {
   // clear html for recipe content 
   recipeContent.html("");
   // create elememts
   var recipeTitle = $("<h3>").text(title);
   var recipeImg = $("<img>").attr('src', image);
-  var divMain = $("<div>").addClass('main-ingredients').append($("<ul>").addClass('collection'));
-  var divOther = $("<div>").addClass('other-ingredients').append($("<ul>").addClass('collection'));
-  console.log(other);
+  var divMain = $("<div>").addClass('main-ingredients').append(
+    $("<h5>").text('Main Ingredients'),
+    $("<ul>").addClass('collection')
+  );
+  var divOther = $("<div>").addClass('other-ingredients').append(
+    $("<h5>").text('Other Ingredients'),
+    $("<ul>").addClass('collection')
+  );
   // loop to pupolate main and other Ingredients
   for (var i=0;i<main.length;i++) {
     divMain.children('.collection').append($("<li>").addClass("collection-item").text(main[i].original));
@@ -26,6 +31,22 @@ var getRecipe = function(title, image, main, other) {
 
 };
 
+var getRecipeByCuisineType = function(food) {
+  // clear html for recipe content 
+  recipeContent.html("");
+  console.log(food);
+  var recipeTitle = $("<h3>").text(food.label);
+  var recipeImg = $("<img>").attr('src', food.image);
+  var divIngredients = $("<div>").addClass('main-ingredients').append(
+    $("<h5>").text('Ingredients'),
+    $("<ul>").addClass('collection')
+  );
+  // loop to pupolate ingredients
+  for (var i=0;i<food.ingredientLines.length;i++) {
+    divIngredients.children('.collection').append($("<li>").addClass("collection-item").text(food.ingredientLines[i]));
+  }
+  recipeContent.append(recipeTitle, recipeImg, divIngredients);
+};
 
 $('#search-button').on('click', function() {
     // gets user ingredients from search bar 
@@ -48,11 +69,11 @@ $('#search-button').on('click', function() {
       var food = data[randomNum];
 
       // main data 
-      var id = data[randomNum].id;
-      var title = data[randomNum].title;
-      var image = data[randomNum].image;
-      var mainIngredients = data[randomNum].usedIngredients;
-      var otherIngredients = data[randomNum].missedIngredients;
+      var id = food.id;
+      var title = food.title;
+      var image = food.image;
+      var mainIngredients = food.usedIngredients;
+      var otherIngredients = food.missedIngredients;
   
       // ask TA 
       // instructions
@@ -63,7 +84,7 @@ $('#search-button').on('click', function() {
       // });
       
       // display on screen
-      getRecipe(title, image, mainIngredients, otherIngredients);
+      getRecipeByIngredients(title, image, mainIngredients, otherIngredients);
 
     })
 });
@@ -75,5 +96,8 @@ $("#search-cuisine").on('click', function () {
     return response.json();
   }).then(function(data) {
     console.log(data);
+    var randomNum = Math.floor(Math.random() * data.hits.length);
+    var food = data.hits[randomNum].recipe;
+    getRecipeByCuisineType(food);
   });
 });
