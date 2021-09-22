@@ -4,8 +4,7 @@ var eID = 'c8eab63d';
 var recipeContent = $("#recipe-content");
 
 // display recipe on screen 
-// missing instructions
-var getRecipeByIngredients = function(title, image, main, other) {
+var getRecipeByIngredients = function(title, image, main, other, instructions) {
   // clear html for recipe content 
   recipeContent.html("");
   // create elememts
@@ -19,22 +18,34 @@ var getRecipeByIngredients = function(title, image, main, other) {
     $("<h5>").text('Other Ingredients'),
     $("<ul>").addClass('collection')
   );
+  var divRecipe = $("<div>").addClass('instructions').append(
+    $("<h5>").text('Instructions'),
+    $("<ul>").addClass('collection')
+  );
   // loop to pupolate main and other Ingredients
   for (var i=0;i<main.length;i++) {
-    divMain.children('.collection').append($("<li>").addClass("collection-item").text(main[i].original));
+    divMain.children('.collection').append(
+      $("<li>").addClass("collection-item").text(main[i].original)
+    );
   }
   for (var i=0;i<other.length;i++) {
-    divOther.children('.collection').append($("<li>").addClass("collection-item").text(other[i].original));
+    divOther.children('.collection').append(
+      $("<li>").addClass("collection-item").text(other[i].original)
+    );
+  }
+  for (var i=0;i<instructions.length;i++) { 
+    divRecipe.children('.collection').append(
+      $("<li>").addClass("collection-item").text(instructions[i])
+    );
   }
   // append elements
-  recipeContent.append(recipeTitle, recipeImg, divMain, divOther);
+  recipeContent.append(recipeTitle, recipeImg, divMain, divOther, divRecipe);
 
 };
 
 var getRecipeByCuisineType = function(food) {
   // clear html for recipe content 
   recipeContent.html("");
-  console.log(food);
   var recipeTitle = $("<h3>").text(food.label);
   var recipeImg = $("<img>").attr('src', food.image);
   var divIngredients = $("<div>").addClass('main-ingredients').append(
@@ -47,6 +58,15 @@ var getRecipeByCuisineType = function(food) {
   }
   recipeContent.append(recipeTitle, recipeImg, divIngredients);
 };
+
+$("#showIngredients").on('click', function() {
+  $(".search-ingredients").removeClass("hide");
+  $(".search-cuisine").addClass("hide");
+});
+$("#showCuisineType").on('click', function() {
+  $(".search-cuisine").removeClass("hide");
+  $(".search-ingredients").addClass("hide");
+});
 
 $('#search-button').on('click', function() {
     // gets user ingredients from search bar 
@@ -74,18 +94,20 @@ $('#search-button').on('click', function() {
       var image = food.image;
       var mainIngredients = food.usedIngredients;
       var otherIngredients = food.missedIngredients;
-  
-      // ask TA 
-      // instructions
-      // fetch(`https://api.spoonacular.com/recipes/?id=${id}/analyzedInstructions&apiKey=${sKEY}`).then(function(response) {
-      //   return response.text();
-      // }).then(function(data) {
-      //   console.log(data);
-      // });
-      
-      // display on screen
-      getRecipeByIngredients(title, image, mainIngredients, otherIngredients);
-
+      var instructions = [];
+    
+      // fetch call for instructions
+      fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${sKEY}`).then(function(response) {
+        return response.json();
+      }).then(function(data) {
+        console.log(data);
+        var steps = data[0].steps;
+        for (var i=0;i<steps.length;i++) {
+          instructions.push(steps[i].step);
+        }
+        // display on screen
+        getRecipeByIngredients(title, image, mainIngredients, otherIngredients, instructions);
+      });
     })
 });
 
@@ -101,3 +123,5 @@ $("#search-cuisine").on('click', function () {
     getRecipeByCuisineType(food);
   });
 });
+
+
