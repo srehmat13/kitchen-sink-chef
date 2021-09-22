@@ -1,6 +1,10 @@
-div .input-field{
-    height: auto;
+div .input-field {
+  height: auto;
 }
-.select-dropdown{
-    display: block;
+.select-dropdown {
+  display: block;
+}
+
+.hide {
+  display: none;
 }

@@ -37,40 +37,42 @@
         </div>
     </header>
         <main>
-            <section>
-                <div class="search-container">
+            <section class="center-align">
+                <button id="showIngredients" class="btn" type="button">Search By Ingredients</button>
+                <button id="showCuisineType" class="btn" type="button">Search By Cuisine Type</button>
+                <div class="search-ingredients">
                     <input type="text" id="ingredients" name="recipe-choice" placeholder="Search for Recipes"> 
                     <button id="search-button" class="submit-btn"><i class="fas fa-search"></i></button>
                 </div>
-                <div class="search-container">  
-                        <div class="input-field">
-                            <select id="cuisine" name="cuisine-type" class="select-dropdown">                    
-                                <option value="" disabled selected>Choose a Cuisine Type</option>                    
-                                <option value="american">American</option>                    
-                                <option value="asian">Asian</option>                    
-                                <option value="british">British</option>                    
-                                <option value="caribbean">Caribbean</option>     
-                                <option value="central europe">Central Europe</option> 
-                                <option value="chinese">Chinese</option>     
-                                <option value="eastern europe">Eastern Europe</option>
-                                <option value="french">French</option>  
-                                <option value="indian">Indian</option> 
-                                <option value="italian">Italian</option>
-                                <option value="japanese">Japanese</option> 
-                                <option value="kosher">Kosher</option>
-                                <option value="mediterranean">Mediterranean</option> 
-                                <option value="mexican">Mexican</option>  
-                                <option value="middle eastern">Middle Eastern</option> 
-                                <option value="nordic">Nordic</option>
-                                <option value="southamerican">South American</option>  
-                                <option value="south east asian">South East Asian</option>        
-                            </select> 
-                            <button id="search-cuisine" class="btn" type="button">Choose a Cuisine Type</button>
-                        </div>                    
+                <div class="search-cuisine hide">  
+                    <div class="input-field">
+                        <select id="cuisine" name="cuisine-type" class="select-dropdown">
+                            <option value="" disabled selected>Choose a Cuisine Type</option>
+                            <option value="american">American</option>
+                            <option value="asian">Asian</option>
+                            <option value="british">British</option>
+                            <option value="caribbean">Caribbean</option>
+                            <option value="central europe">Central Europe</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="eastern europe">Eastern Europe</option>
+                            <option value="french">French</option>
+                            <option value="indian">Indian</option>
+                            <option value="italian">Italian</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="kosher">Kosher</option>
+                            <option value="mediterranean">Mediterranean</option>
+                            <option value="mexican">Mexican</option>
+                            <option value="middle eastern">Middle Eastern</option>
+                            <option value="nordic">Nordic</option>
+                            <option value="southamerican">South American</option>
+                            <option value="south east asian">South East Asian</option>
+                        </select>
+                        <button id="search-cuisine" class="btn" type="button">Choose a Cuisine Type</button>
+                    </div>
                 </div>
             </section>
             <section>
-                <div id="recipe-content">
+                <div id="recipe-content" class="center-align">
 
                 </div>
             </section>
