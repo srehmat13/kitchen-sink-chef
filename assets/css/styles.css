@@ -37,7 +37,9 @@ nav ul li a {
   font-weight: bold;
   color: rgb(36, 11, 150);
 }
-
+.main-app {
+  height: 50vh;
+}
 .search-button-sections {
   display: flex;
   flex-direction: column;
@@ -83,20 +85,25 @@ nav ul li a {
 }
 
 #recents {
-  height: auto;
+  height: 50vh;
   display: flex;
   flex-direction: column;
+}
+.List {
+  margin: auto;
+  width: auto !important;
+}
+footer ul li a {
+  color: rgb(36, 11, 150);
 }
 
 @media screen and (min-width: 600px) {
   .search-button-sections {
     flex-direction: row;
     justify-content: space-around;
-    /* padding: 0; */
   }
   .menu {
     flex-direction: row;
     justify-content: space-evenly;
-    /* padding: 0; */
   }
 }

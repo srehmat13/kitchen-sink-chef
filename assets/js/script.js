@@ -96,7 +96,7 @@ var getRecipeByCuisineType = function(food) {
   pushToRecents(recipeTitle.text());
 };
 
-$("#showRecent").on('click', function() {
+$(".showRecent").on('click', function() {
   $("#recents").removeClass("hide");
   $(".main-app").addClass("hide");
 });

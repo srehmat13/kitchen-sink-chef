@@ -17,7 +17,7 @@
         <div class="row">
         <nav class="col s12 right-align indigo darken-4">
             <ul>
-                <li id="showRecent">
+                <li class="showRecent">
                     <a href="#recents">Recents</a>
                 </li>
                 <li>
@@ -35,50 +35,65 @@
             </h2>
         </div>
     </header>
-        <main class ="row main-app">
-            <section class="col s12 ">
-                <div class="row search-button-sections">
-                    <button id="showIngredients" class="btn amber lighten-2 col s12 m5" type="button">Search By Ingredients</button>
-                    <button id="showCuisineType" class="btn amber lighten-2 col s12 m5" type="button">Search By Cuisine Type</button>
-                </div>
-                <div class="search-ingredients menu row valign-wrapper">
-                    <input class="col s12 m6 l8 ingredients" type="text" id="ingredients" name="recipe-choice"
-                        placeholder="Search for Recipes">
-                    <button id="search-button" class="btn amber lighten-2 col s12 m3 search-button">SEARCH</button>
-                </div>
-                <div class="search-cuisine hide input-field menu valign-wrapper row">
-                    <select id="cuisine" name="cuisine-type" class="select-dropdown ingredients col s12 m6 l8">
-                        <option value="" disabled selected>Choose a Cuisine Type</option>
-                        <option value="american">American</option>
-                        <option value="asian">Asian</option>
-                        <option value="british">British</option>
-                        <option value="caribbean">Caribbean</option>
-                        <option value="central europe">Central Europe</option>
-                        <option value="chinese">Chinese</option>
-                        <option value="eastern europe">Eastern Europe</option>
-                        <option value="french">French</option>
-                        <option value="indian">Indian</option>
-                        <option value="italian">Italian</option>
-                        <option value="japanese">Japanese</option>
-                        <option value="kosher">Kosher</option>
-                        <option value="mediterranean">Mediterranean</option>
-                        <option value="mexican">Mexican</option>
-                        <option value="middle eastern">Middle Eastern</option>
-                        <option value="nordic">Nordic</option>
-                        <option value="southamerican">South American</option>
-                        <option value="south east asian">South East Asian</option>
-                    </select>
-                    <button id="search-cuisine" class="btn amber lighten-2 search-button col s12 m3" type="button">SEARCH</button>
-                </div>
-            </section>
-            <section  class="col s12">
-                <div id="recipe-content" class="center-align"></div>
-            </section>
-        </main>
-        <section id="recents" class="row hide">
-            <button id="backBtn" class="btn amber lighten-2 search-button col s12">Back</button>
-            <ul class="collection col s12 center-align"></ul>
+    <main class ="row main-app">
+        <section class="col s12 ">
+            <div class="row search-button-sections">
+                <button id="showIngredients" class="btn amber lighten-2 col s12 m5" type="button">Search By Ingredients</button>
+                <button id="showCuisineType" class="btn amber lighten-2 col s12 m5" type="button">Search By Cuisine Type</button>
+            </div>
+            <div class="search-ingredients menu row valign-wrapper">
+                <input class="col s12 m6 l8 ingredients" type="text" id="ingredients" name="recipe-choice"
+                    placeholder="Search for Recipes">
+                <button id="search-button" class="btn amber lighten-2 col s12 m3 search-button">SEARCH</button>
+            </div>
+            <div class="search-cuisine hide input-field menu valign-wrapper row">
+                <select id="cuisine" name="cuisine-type" class="select-dropdown ingredients col s12 m6 l8">
+                    <option value="" disabled selected>Choose a Cuisine Type</option>
+                    <option value="american">American</option>
+                    <option value="asian">Asian</option>
+                    <option value="british">British</option>
+                    <option value="caribbean">Caribbean</option>
+                    <option value="central europe">Central Europe</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="eastern europe">Eastern Europe</option>
+                    <option value="french">French</option>
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="kosher">Kosher</option>
+                    <option value="mediterranean">Mediterranean</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="middle eastern">Middle Eastern</option>
+                    <option value="nordic">Nordic</option>
+                    <option value="southamerican">South American</option>
+                    <option value="south east asian">South East Asian</option>
+                </select>
+                <button id="search-cuisine" class="btn amber lighten-2 search-button col s12 m3" type="button">SEARCH</button>
+            </div>
         </section>
+        <section  class="col s12">
+            <div id="recipe-content" class="center-align"></div>
+        </section>
+    </main>
+    <section id="recents" class="row hide">
+        <button id="backBtn" class="btn amber lighten-2 search-button col s12">Back</button>
+        <h2 class="center-align">Recent Results</h2>
+        <ul class="collection col s12 center-align List"></ul>
+    </section>
+    <footer>
+        <div class="row">
+            <nav class="col s12 right-align amber lighten-2">
+                <ul>
+                    <li class="showRecent">
+                        <a href="#recents">Recents</a>
+                    </li>
+                    <li>
+                        <a href="#subscribe">Subscribe</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
