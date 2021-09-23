@@ -18,9 +18,6 @@
         <nav class="col s12 right-align indigo darken-4">
             <ul>
                 <li>
-                    <a href="#Recipes">Recipes</a>
-                </li>
-                <li>
                     <a href="#Favorites">Favorites</a>
                 </li>
                 <li>
@@ -34,46 +31,46 @@
                 <a class="app-title" href="/">Kitchen Sink Chef   <i class="fas fa-utensils amber-text lighten-2"></i></a>
             </h1>
             <h2 class="center-align col s12">
-                don't have time for grocieries? try these recipes!
+                don't have time for grocieries? <br>try these recipes!
             </h2>
         </div>
     </header>
-        <main class ="row col s12 search-button-sections">
-            <section class="center-align">
-                <button id="showIngredients" class="btn amber lighten-2" type="button">Search By Ingredients</button>
-                <button id="showCuisineType" class="btn amber lighten-2" type="button">Search By Cuisine Type</button>
-                <div class="search-ingredients">
-                    <input type="text" id="ingredients" name="recipe-choice" placeholder="Search for Recipes"> 
-                    <button id="search-button" class="submit-btn"><i class="fas fa-search"></i></button>
+        <main class ="row">
+            <section class="center-align col s12 ">
+                <div class="row search-button-sections">
+                    <button id="showIngredients" class="btn amber lighten-2 col s12 m5" type="button">Search By Ingredients</button>
+                    <button id="showCuisineType" class="btn amber lighten-2 col s12 m5" type="button">Search By Cuisine Type</button>
                 </div>
-                <div class="search-cuisine hide">  
-                    <div class="input-field">
-                        <select id="cuisine" name="cuisine-type" class="select-dropdown">
-                            <option value="" disabled selected>Choose a Cuisine Type</option>
-                            <option value="american">American</option>
-                            <option value="asian">Asian</option>
-                            <option value="british">British</option>
-                            <option value="caribbean">Caribbean</option>
-                            <option value="central europe">Central Europe</option>
-                            <option value="chinese">Chinese</option>
-                            <option value="eastern europe">Eastern Europe</option>
-                            <option value="french">French</option>
-                            <option value="indian">Indian</option>
-                            <option value="italian">Italian</option>
-                            <option value="japanese">Japanese</option>
-                            <option value="kosher">Kosher</option>
-                            <option value="mediterranean">Mediterranean</option>
-                            <option value="mexican">Mexican</option>
-                            <option value="middle eastern">Middle Eastern</option>
-                            <option value="nordic">Nordic</option>
-                            <option value="southamerican">South American</option>
-                            <option value="south east asian">South East Asian</option>
-                        </select>
-                        <button id="search-cuisine" class="btn" type="button">Choose a Cuisine Type</button>
-                    </div>
+                <div class="search-ingredients menu row valign-wrapper">
+                    <input class="col s12 m6 l8 ingredients" type="text" id="ingredients" name="recipe-choice" placeholder="Search for Recipes"> 
+                    <button id="search-button" class="btn amber lighten-2 col s12 m3 search-button">SEARCH</button>
+                </div>
+                <div class="search-cuisine hide input-field menu valign-wrapper row">
+                    <select id="cuisine" name="cuisine-type" class="select-dropdown ingredients col s12 m6 l8">
+                        <option value="" disabled selected>Choose a Cuisine Type</option>
+                        <option value="american">American</option>
+                        <option value="asian">Asian</option>
+                        <option value="british">British</option>
+                        <option value="caribbean">Caribbean</option>
+                        <option value="central europe">Central Europe</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="eastern europe">Eastern Europe</option>
+                        <option value="french">French</option>
+                        <option value="indian">Indian</option>
+                        <option value="italian">Italian</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="kosher">Kosher</option>
+                        <option value="mediterranean">Mediterranean</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="middle eastern">Middle Eastern</option>
+                        <option value="nordic">Nordic</option>
+                        <option value="southamerican">South American</option>
+                        <option value="south east asian">South East Asian</option>
+                    </select>
+                    <button id="search-cuisine" class="btn amber lighten-2 search-button col s12 m3" type="button">SEARCH</button>
                 </div>
             </section>
-            <section>
+            <section  class="col s12">
                 <div id="recipe-content" class="center-align">
 
                 </div>
