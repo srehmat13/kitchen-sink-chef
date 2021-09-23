@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 div .input-field {
   height: auto;
 }
@@ -7,4 +13,48 @@ div .input-field {
 
 .hide {
   display: none;
+}
+
+nav ul li a {
+  font-size: 20px;
+}
+
+#showIngredients,
+#showCuisineType {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgb(36, 11, 150);
+  font-size: 20px;
+}
+.row {
+  margin-bottom: 0;
+}
+.header {
+  background-image: url(../images/ingredients-background.jpg);
+  opacity: 90%;
+  background-size: cover;
+  background-position: center;
+  height: 77vh;
+}
+
+.app-title {
+  font-weight: bold;
+  color: rgb(36, 11, 150);
+}
+
+.search-button-sections {
+  margin-top: 20px;
+}
+
+#search-button {
+  color:rgb(36, 11, 150);
+
+}
+
+#search-button:hover {
+  color: rgb(224, 199, 56);
+}
+
+#ingredients {
+  padding: 20px;
+  margin: 50px;
 }
