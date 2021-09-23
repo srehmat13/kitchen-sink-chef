@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
 
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 div .input-field {
@@ -42,25 +42,24 @@ nav ul li a {
 }
 #showIngredients,
 #showCuisineType {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   color: rgb(36, 11, 150);
   font-size: 20px;
   margin: 10px;
 }
 
 .menu {
-  height: 25vh;
+  height: 20vh;
 }
 
 .search-button {
-  color:rgb(36, 11, 150);
+  color: rgb(36, 11, 150);
   margin: auto;
   margin-left: 1px;
   padding: 0;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
   max-width: 149.25px;
-
 }
 
 .search-button:hover {
@@ -70,8 +69,6 @@ nav ul li a {
 .ingredients {
   margin: auto;
   width: 100%;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 20px;
 }
-
-
