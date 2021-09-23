@@ -11,10 +11,10 @@ Hello home cooks! Are you tired of picking a recipe only to realize you are miss
 * JQuery
 
 ## Website
+https://srehmat13.github.io/kitchen-sink-chef/
 
 
-
-![ScreenShot](/assets/images/.png)
+![ScreenShot](/assets/images/screenshot.png)
 
 ## Contribution
 Made by Steven Dorvil, Elsie Herrera & Shabia Harrington 
