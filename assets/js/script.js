@@ -84,6 +84,7 @@ $('#search-button').on('click', function() {
     fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${finished}&number=100&apiKey=${sKEY}`).then(function(response){
         return response.json();
     }).then(function(data) {
+      console.log(data);
       // get random number to get random element in data array 
       var randomNum = Math.floor(Math.random() * data.length);
       var food = data[randomNum];
@@ -108,6 +109,11 @@ $('#search-button').on('click', function() {
         // display on screen
         getRecipeByIngredients(title, image, mainIngredients, otherIngredients, instructions);
       });
+    }).catch(function(error) {
+      recipeContent.html(`<h4>Recipe not Found</h4>
+                          <p>Please make sure you enter your ingredients correctly!<p>`);
+      console.log(error);
+      
     })
 });
 

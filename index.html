@@ -13,9 +13,9 @@
 </head>
 <body>
     <!--navigation-->
-    <header> 
-        <div class="row col s12">
-        <nav>
+    <header class="right-align indigo darken-4"> 
+        <div class="row">
+        <nav class="col s12 right-align indigo darken-4">
             <ul>
                 <li>
                     <a href="#Recipes">Recipes</a>
@@ -24,26 +24,24 @@
                     <a href="#Favorites">Favorites</a>
                 </li>
                 <li>
-                    <a href="#Subscribe" class="waves-effect waves-light btn">Subscribe</a>
+                    <a href="#Subscribe">Subscribe</a>
                 </li>
             </ul>
         </nav>
         </div>
-        <div class="header row col s12">
-            <h1 class="center-align card-panel"> 
-            <span class="pink-text accent-4"
-                <a href="/">Kitchen Sink Chef <i class="fas fa-utensils"></i></a>
-            </span>
+        <div class="header row">
+            <h1 class="center-align col s12"> 
+                <a class="app-title" href="/">Kitchen Sink Chef   <i class="fas fa-utensils amber-text lighten-2"></i></a>
             </h1>
-            <h2 class="center-align">
-                Don't have time for grocieries, try these recipes!
+            <h2 class="center-align col s12">
+                don't have time for grocieries? try these recipes!
             </h2>
         </div>
     </header>
-        <main class ="row col s12">
+        <main class ="row col s12 search-button-sections">
             <section class="center-align">
-                <button id="showIngredients" class="btn" type="button">Search By Ingredients</button>
-                <button id="showCuisineType" class="btn" type="button">Search By Cuisine Type</button>
+                <button id="showIngredients" class="btn amber lighten-2" type="button">Search By Ingredients</button>
+                <button id="showCuisineType" class="btn amber lighten-2" type="button">Search By Cuisine Type</button>
                 <div class="search-ingredients">
                     <input type="text" id="ingredients" name="recipe-choice" placeholder="Search for Recipes"> 
                     <button id="search-button" class="submit-btn"><i class="fas fa-search"></i></button>
