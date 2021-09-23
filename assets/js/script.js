@@ -84,7 +84,6 @@ $('#search-button').on('click', function() {
     fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${finished}&number=100&apiKey=${sKEY}`).then(function(response){
         return response.json();
     }).then(function(data) {
-      console.log(data);
       // get random number to get random element in data array 
       var randomNum = Math.floor(Math.random() * data.length);
       var food = data[randomNum];
@@ -101,7 +100,6 @@ $('#search-button').on('click', function() {
       fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${sKEY}`).then(function(response) {
         return response.json();
       }).then(function(data) {
-        console.log(data);
         var steps = data[0].steps;
         for (var i=0;i<steps.length;i++) {
           instructions.push(steps[i].step);
@@ -112,8 +110,6 @@ $('#search-button').on('click', function() {
     }).catch(function(error) {
       recipeContent.html(`<h4>Recipe not Found</h4>
                           <p>Please make sure you enter your ingredients correctly!<p>`);
-      console.log(error);
-      
     })
 });
 
@@ -123,10 +119,12 @@ $("#search-cuisine").on('click', function () {
   fetch(`https://api.edamam.com/api/recipes/v2?type=public&random=true&cuisineType=${type}&app_id=${eID}&app_key=${eKEY}`).then(function(response) {
     return response.json();
   }).then(function(data) {
-    console.log(data);
     var randomNum = Math.floor(Math.random() * data.hits.length);
     var food = data.hits[randomNum].recipe;
     getRecipeByCuisineType(food);
+  }).catch(function(error) {
+    recipeContent.html(`<h4>Recipe not Found</h4>
+                        <p>Please make sure you enter your ingredients correctly!<p>`);
   });
 });
 
