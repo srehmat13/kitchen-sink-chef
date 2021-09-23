@@ -93,9 +93,10 @@ var getRecipeByCuisineType = function(food) {
     divIngredients.children('.collection').append($("<li>").addClass("collection-item").text(food.ingredientLines[i]));
   }
   recipeContent.append(recipeTitle, recipeImg, divIngredients);
+  pushToRecents(recipeTitle.text());
 };
 
-$("#showRecent").on('click', function() {
+$(".showRecent").on('click', function() {
   $("#recents").removeClass("hide");
   $(".main-app").addClass("hide");
 });
