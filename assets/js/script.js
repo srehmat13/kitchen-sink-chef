@@ -11,9 +11,10 @@ var saveToLS = function (array) {
 
 // display to favorites
 var pushToRecents = function(title) {
-  console.log(recents, title);
   recents.push(title);
-  console.log(recents);
+  if (recents.length > 5) {
+    recents.shift();
+  }
   saveToLS(recents);
 }
 
@@ -22,6 +23,7 @@ var loadRecents = function() {
   if (!recents) {
     recents = [];
   }
+  recentSection.children('.collection').html('');
   for (var i=0;i<recents.length;i++) {
     recentSection.children('.collection').append(
       $("<li>").addClass('collection-item').text(recents[i])
@@ -97,6 +99,7 @@ var getRecipeByCuisineType = function(food) {
 };
 
 $(".showRecent").on('click', function() {
+  loadRecents();
   $("#recents").removeClass("hide");
   $(".main-app").addClass("hide");
 });
